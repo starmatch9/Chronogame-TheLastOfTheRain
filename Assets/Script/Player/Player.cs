@@ -65,8 +65,8 @@ public class Player : MonoBehaviour
         //获取输入（GetAxis有惯性，输入管理器）
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
-        float xRaw = Input.GetAxisRaw("Horizontal");
-        float yRaw = Input.GetAxisRaw("Vertical");
+        //float xRaw = Input.GetAxisRaw("Horizontal");
+        //float yRaw = Input.GetAxisRaw("Vertical");
         Vector2 dir = new Vector2(x, y);
 
         if (Move)
