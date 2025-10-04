@@ -119,35 +119,22 @@ public class MouseFollow : MonoBehaviour
     //跟随方法主题
     private void FollowMousePosition()
     {
-        Vector3 mousePosition = Input.mousePosition;
-        //设置z坐标为物体到相机的距离，否则看不见
-        mousePosition.z = 4.5f;
-        //转换为世界坐标
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        worldPosition.z = originalPosition.z;
-        //更新物体位置
-        transform.position = worldPosition;
+        //Vector3 mousePosition = Input.mousePosition;
+        ////设置z坐标为物体到相机的距离，否则看不见
+        //mousePosition.z = 4.5f;
+        ////转换为世界坐标
+        //Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        //worldPosition.z = originalPosition.z;
+        ////更新物体位置
+        //transform.position = worldPosition;
+
+        transform.position = currentPos;
     }
 
     //预览位置
     public void PreviewPosition(bool canPlace)
     {
-        if (subObject == null)
-        {
-            return;
-        }
-        SpriteRenderer[] renderers = subObject.GetComponentsInChildren<SpriteRenderer>();
-        foreach (SpriteRenderer renderer in renderers)
-        {
-            if (canPlace)
-            {
-                renderer.color = new Color(1, 1, 1, 0.5f);
-            }
-            else
-            {
-                renderer.color = new Color(1, 0, 0, 0.5f);
-            }
-        }
+        
     }
 
     //更新位置：始终是鼠标位置最近的x.5, x.5的点

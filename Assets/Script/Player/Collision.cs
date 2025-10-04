@@ -55,6 +55,39 @@ public class Collision : MonoBehaviour
         }
     }
 
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        //检测指定标签的地形
+        if (collision.gameObject.CompareTag(groundTag))
+        {
+            //获取第一个接触点
+            ContactPoint2D contact = collision.contacts[0];
+
+            //获取法线方向
+            Vector2 hitDirection = contact.normal;
+
+            //记录当前碰撞体的接触方向
+            if (hitDirection.y > 0.5f)
+            {
+                keyValuePairs[collision.gameObject] = hitDirection;
+
+                onGround = true;
+            }
+            else if (hitDirection.x > 0.5f)
+            {
+                keyValuePairs[collision.gameObject] = hitDirection;
+
+                onRightWall = true;
+            }
+            else if (hitDirection.x < -0.5f)
+            {
+                keyValuePairs[collision.gameObject] = hitDirection;
+
+                onLeftWall = true;
+            }
+        }
+    }
+
     void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag(groundTag))
