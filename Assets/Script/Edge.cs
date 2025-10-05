@@ -8,6 +8,8 @@ public class Edge : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            GlobalData.EndGame();
+
             Debug.Log("死亡");
         }
     }

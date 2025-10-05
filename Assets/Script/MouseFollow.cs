@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MouseFollow : MonoBehaviour
 {
@@ -15,9 +16,12 @@ public class MouseFollow : MonoBehaviour
     bool following = false;
 
     //是否可以点击
-    bool canClick = false;
+    bool canClick = true;
 
     Vector3 currentPos;
+
+    //维护当前建筑的触发器列表
+    List<TriggerCanPlace> triggerCanPlaces = new List<TriggerCanPlace>();
 
     //开始跟随鼠标
     public void StartFollow(Card card)
@@ -31,7 +35,8 @@ public class MouseFollow : MonoBehaviour
             Collider2D[] colliders = subObject.GetComponentsInChildren<Collider2D>();
             foreach (Collider2D collider in colliders)
             {
-                collider.enabled = false;
+                collider.isTrigger = true;
+                triggerCanPlaces.Add(collider.gameObject.GetComponent<TriggerCanPlace>());//也可以用AddComponent
             }
             subObject.transform.localPosition = Vector3.zero;
 
@@ -60,6 +65,8 @@ public class MouseFollow : MonoBehaviour
 
         following = false;
         transform.position = originalPosition;
+
+        triggerCanPlaces.Clear();
     }
 
     private void Start()
@@ -83,15 +90,18 @@ public class MouseFollow : MonoBehaviour
         //点击到UI时停止跟随
         if (following && Input.GetMouseButtonDown(0))
         {
-            //表示鼠标位于任意UI元素上
+            //用鼠标点击ui时才停止跟随
             if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
             {
-                StopFollow();
+                StopFollow(); 
             }
         }
+        EventSystem.current.SetSelectedGameObject(null);
 
-        canClick = true;
         UpdatePosition();
+        
+        
+        canClick = SetCanClick();
         if (following && canClick && Input.GetMouseButton(0))
         {
             //执行功能
@@ -102,8 +112,21 @@ public class MouseFollow : MonoBehaviour
         else if (following && !canClick && Input.GetMouseButton(0))
         {
 
-            StopFollow();
+            //无法放置的音效
+
         }
+    }
+
+    public bool SetCanClick()
+    {
+        for (int i = 0; i < triggerCanPlaces.Count; i++)
+        {
+            if (triggerCanPlaces[i] != null && !triggerCanPlaces[i].canPlace)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     public void Action(Vector3 pos)
@@ -113,8 +136,6 @@ public class MouseFollow : MonoBehaviour
             currentCard.CardPlace(pos);
         }
     }
-
-
 
     //跟随方法主题
     private void FollowMousePosition()
@@ -129,12 +150,6 @@ public class MouseFollow : MonoBehaviour
         //transform.position = worldPosition;
 
         transform.position = currentPos;
-    }
-
-    //预览位置
-    public void PreviewPosition(bool canPlace)
-    {
-        
     }
 
     //更新位置：始终是鼠标位置最近的x.5, x.5的点
@@ -160,4 +175,5 @@ public class MouseFollow : MonoBehaviour
 
         return worldPosition;
     }
+
 }
