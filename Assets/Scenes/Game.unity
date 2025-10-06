@@ -7942,7 +7942,7 @@ MonoBehaviour:
     rainPerUnit: 0
     seaSpeed: 0
     weight: 40
-    duration: 10
+    duration: 100
     durationRange: 8
   - name: "\u5C0F\u96E8"
     icon: {fileID: 21300000, guid: 88d9cc88fbd88b2419dc2ea146a3060b, type: 3}
@@ -25388,6 +25388,7 @@ MonoBehaviour:
   canMove: 1
   canJump: 1
   wallSlide: 0
+  jumped: 0
   maxJumpCount: 1
   MoveScript: {fileID: 0}
   JumpScript: {fileID: 0}

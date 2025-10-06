@@ -89,7 +89,6 @@ public class SkillManager : MonoBehaviour
             {
                 Destroy(umbrellaInstance);
                 umbrellaInstance = null;
-                GlobalData.isUmberalla = false;
             }
 
             StopCoroutine(skill);
@@ -114,7 +113,6 @@ public class SkillManager : MonoBehaviour
         StartCoroutine(JumpIn());
 
         umbrellaInstance = Instantiate(umb, new Vector3(0, 0, 0), Quaternion.identity);
-        GlobalData.isUmberalla = true;
 
         //技能持续时间
         //yield return new WaitForSeconds(duration);
@@ -129,7 +127,6 @@ public class SkillManager : MonoBehaviour
 
         Destroy(umbrellaInstance);
         umbrellaInstance = null;
-        GlobalData.isUmberalla = false;
 
         StartCoroutine(JumpOut());
         skill = null;

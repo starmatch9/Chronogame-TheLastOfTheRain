@@ -68,6 +68,8 @@ public class Jump : MonoBehaviour
             disableCoroutine = null;
         }
         disableCoroutine = StartCoroutine(DisableJump(disableTime));
+
+        player.jumped = true;
     }
 
     //无法操纵协程

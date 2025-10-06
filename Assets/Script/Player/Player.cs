@@ -1,6 +1,7 @@
 ﻿using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -38,6 +39,7 @@ public class Player : MonoBehaviour
     public bool canMove = true;   //玩家是否可左右操纵角色
     public bool canJump = true;   //玩家是否可跳跃
     public bool wallSlide = false;    //是否处于滑落状态
+    public bool jumped = false;
 
     [Space]
     [Header("最大跳跃次数")]
@@ -94,6 +96,7 @@ public class Player : MonoBehaviour
         if((coll.onGround || coll.onLeftWall || coll.onRightWall) && canJump)
         {
             jumpCount = 0;
+            jumped = false;
         }
 
 
@@ -136,7 +139,7 @@ public class Player : MonoBehaviour
         //跳跃
         if (bufferTimer > 0 && canJump)
         {
-            if ((coll.onGround || coyoteTimer > 0) || (!coll.onGround && !coll.onLeftWall && !coll.onRightWall && jumpCount < maxJumpCount))
+            if ((coll.onGround || coyoteTimer > 0) || (!coll.onGround && !coll.onLeftWall && !coll.onRightWall && jumpCount < maxJumpCount && jumped))
             {
                 JumpScript.BasicJump(Vector2.up);
 
