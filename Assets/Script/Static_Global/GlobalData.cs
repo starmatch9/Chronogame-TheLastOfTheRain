@@ -28,6 +28,10 @@ public static class GlobalData
     public static int playerHealth;
     public static int currentHealth;
 
+    //天气管理(好像这种直接用管理器的方法也不错)
+    public static WeatherManager weatherManager;
+
+
     /*游戏结束逻辑*/
     public static void EndGame()
     {
