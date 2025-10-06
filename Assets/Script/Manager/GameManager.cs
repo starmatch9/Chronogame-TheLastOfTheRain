@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("玩家")]
+    public Player player;
+
     [Header("水平面游戏对象")]
     public Sea sea;
 
@@ -33,6 +36,8 @@ public class GameManager : MonoBehaviour
         GlobalData.healthBar = healthBar;
 
         GlobalData.recard = recard;
+
+        GlobalData.player = player;
 
         GlobalData.stopGame = stopGame;
 

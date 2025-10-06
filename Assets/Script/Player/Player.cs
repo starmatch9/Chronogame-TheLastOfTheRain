@@ -39,6 +39,10 @@ public class Player : MonoBehaviour
     public bool canJump = true;   //玩家是否可跳跃
     public bool wallSlide = false;    //是否处于滑落状态
 
+    [Space]
+    [Header("最大跳跃次数")]
+    public int maxJumpCount = 1; //最大跳跃次数
+
 
     //维护各个能力脚本
     [HideInInspector]
@@ -83,8 +87,16 @@ public class Player : MonoBehaviour
 
     }
 
+    public int jumpCount = 0;
     public void JumpAction()
     {
+        //落地或者在墙上就重置跳跃次数
+        if((coll.onGround || coll.onLeftWall || coll.onRightWall) && canJump)
+        {
+            jumpCount = 0;
+        }
+
+
         //土狼时间（不在地面或者墙面就开始倒计时）
         if (coll.onGround)
         {
@@ -124,9 +136,11 @@ public class Player : MonoBehaviour
         //跳跃
         if (bufferTimer > 0 && canJump)
         {
-            if (coll.onGround || coyoteTimer > 0)
+            if ((coll.onGround || coyoteTimer > 0) || (!coll.onGround && !coll.onLeftWall && !coll.onRightWall && jumpCount < maxJumpCount))
             {
                 JumpScript.BasicJump(Vector2.up);
+
+                ++jumpCount;
 
                 coyoteTimer = 0;
                 bufferTimer = 0;
@@ -138,12 +152,16 @@ public class Player : MonoBehaviour
                 {
                     WallJumpScript.JumpOnWall(Vector2.left);
 
+                    ++jumpCount;
+
                     coyoteTimerLeft = 0;
                     bufferTimer = 0;
                 }
                 else if (coll.onRightWall || coyoteTimerRight > 0)
                 {
                     WallJumpScript.JumpOnWall(Vector2.right);
+
+                    ++jumpCount;
 
                     coyoteTimerRight = 0;
                     bufferTimer = 0;

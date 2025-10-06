@@ -6,6 +6,8 @@ public static class GlobalData
 {
     public static MonoBehaviour mono;
 
+    public static Player player;
+
     public static List<GameObject> buildings = new List<GameObject>();
 
     public static Transform buildingParent;
@@ -30,6 +32,8 @@ public static class GlobalData
 
     //天气管理(好像这种直接用管理器的方法也不错)
     public static WeatherManager weatherManager;
+
+    public static bool isUmberalla;
 
 
     /*游戏结束逻辑*/
@@ -84,7 +88,6 @@ public static class GlobalData
         hurtCoroutine = null;
     }
 
-    /*下雨逻辑*/
 
 
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7170416405903806060}
   - component: {fileID: 5629963688053436079}
   - component: {fileID: 3794647692777110146}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Box (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 7848578571798926027}
   - component: {fileID: 3782810852316054490}
   - component: {fileID: 3250072055442083971}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Box (3)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 1013101176796533486}
   - component: {fileID: 6070803987551408291}
   - component: {fileID: 4117382936457006869}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Box
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 7719495138340077955}
   - component: {fileID: 2830600261421418165}
   - component: {fileID: 3327250797571589510}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Box (2)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -698,7 +698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6840972239412879090}
   - component: {fileID: -416154731548529279}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Building_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
