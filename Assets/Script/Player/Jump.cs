@@ -36,9 +36,9 @@ public class Jump : MonoBehaviour
             player.rb.velocity += Vector2.up * Physics2D.gravity.y * (fallGravityScale - 1) * Time.deltaTime;
 
             //速度最大只能是30
-            if (player.rb.velocity.y < -50f)
+            if (player.rb.velocity.y < -25f)
             {
-                player.rb.velocity = new Vector2(player.rb.velocity.x, -50f);
+                player.rb.velocity = new Vector2(player.rb.velocity.x, -25f);
             }
         }
         else if (player.rb.velocity.y > 0 && !Input.GetButton("Jump"))

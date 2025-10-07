@@ -6253,7 +6253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f0f26deea2befcb4583bea3240c9a2a9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2f07554be72a3e44ba8363ab78156846, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7804,11 +7804,24 @@ MonoBehaviour:
   buildingParent: {fileID: 1318745224}
   buildings:
   - {fileID: 1255316380513091917, guid: b233496b0f6b7824ab294604e72debb5, type: 3}
+  - {fileID: 1255316380513091917, guid: b233496b0f6b7824ab294604e72debb5, type: 3}
+  - {fileID: 6842630816557058458, guid: c672e839d85c36a4fa7e7fc404cd9108, type: 3}
+  - {fileID: 6842630816557058458, guid: c672e839d85c36a4fa7e7fc404cd9108, type: 3}
   - {fileID: 6842630816557058458, guid: c672e839d85c36a4fa7e7fc404cd9108, type: 3}
   - {fileID: 5060125634750685754, guid: 597ab7873d988614fbe0696fedb34187, type: 3}
   - {fileID: 4466158415586829597, guid: 2a640f880cb606d459847e634253da23, type: 3}
   - {fileID: 2876709703643766713, guid: ea92f08345ef8774bb63a824c5b601ab, type: 3}
+  - {fileID: 2876709703643766713, guid: ea92f08345ef8774bb63a824c5b601ab, type: 3}
   - {fileID: 150936481646363311, guid: b33416789a058f840891afcb16814c1d, type: 3}
+  - {fileID: 150936481646363311, guid: b33416789a058f840891afcb16814c1d, type: 3}
+  - {fileID: 150936481646363311, guid: b33416789a058f840891afcb16814c1d, type: 3}
+  - {fileID: 150936481646363311, guid: 9a77c804aeca9924390d571cf243f86a, type: 3}
+  - {fileID: 150936481646363311, guid: 9a77c804aeca9924390d571cf243f86a, type: 3}
+  - {fileID: 4466158415586829597, guid: 7da1f172b0d23c646a39129db717c667, type: 3}
+  - {fileID: 5060125634750685754, guid: a229584f14899194d81df25e83a5f145, type: 3}
+  - {fileID: 5060125634750685754, guid: a229584f14899194d81df25e83a5f145, type: 3}
+  - {fileID: 150936481646363311, guid: 582067adba404fa4b9e2f4e452eb70f1, type: 3}
+  - {fileID: 150936481646363311, guid: 582067adba404fa4b9e2f4e452eb70f1, type: 3}
 --- !u!1 &486265489
 GameObject:
   m_ObjectHideFlags: 0
@@ -8110,36 +8123,36 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: c45aa4c8b3deb3b4288857b6aca9f1ab, type: 3}
     rainPerUnit: 0
     seaSpeed: 0
-    weight: 40
+    weight: 50
     duration: 20
-    durationRange: 8
+    durationRange: 10
     voice: {fileID: 0}
   - name: "\u5C0F\u96E8"
     icon: {fileID: 21300000, guid: 88d9cc88fbd88b2419dc2ea146a3060b, type: 3}
     rainPerUnit: 200
-    seaSpeed: 0.2
-    weight: 20
-    duration: 10
+    seaSpeed: 0.5
+    weight: 25
+    duration: 15
     durationRange: 8
     voice: {fileID: 8300000, guid: d6cb6466a567b4e47a2f8ae99e882edc, type: 3}
   - name: "\u4E2D\u96E8"
     icon: {fileID: 21300000, guid: 7c935e0a93392f04d8e560ba41ddb82b, type: 3}
     rainPerUnit: 500
-    seaSpeed: 0.5
-    weight: 20
-    duration: 10
-    durationRange: 8
+    seaSpeed: 1
+    weight: 15
+    duration: 12
+    durationRange: 5
     voice: {fileID: 8300000, guid: 3a9e52985b9e3c54c9979718b76095ac, type: 3}
   - name: "\u5927\u96E8"
     icon: {fileID: 21300000, guid: 9db35cb0f1c2e4843980eebaf7859152, type: 3}
     rainPerUnit: 1000
-    seaSpeed: 1
-    weight: 20
+    seaSpeed: 1.5
+    weight: 0
     duration: 10
-    durationRange: 8
+    durationRange: 7.5
     voice: {fileID: 8300000, guid: 7f35ba25541794f4d9de8c28ac29997c, type: 3}
-  meter: 10
-  weightIncrease: 000000000a0000000a0000000a000000
+  meter: 25
+  weightIncrease: 0000000005000000050000000a000000
 --- !u!1 &512643309
 GameObject:
   m_ObjectHideFlags: 0
@@ -10919,11 +10932,11 @@ MonoBehaviour:
   skillPrefabs:
   - {fileID: 4673436386421795968, guid: 6541e00c6b832064d97f5506aa19e797, type: 3}
   - {fileID: 12895157960900539, guid: 2e7b6f2994488064a8f9c02d5fdeb837, type: 3}
-  spawnHeight: 5
+  spawnHeight: 25
   umbrellaIcon: {fileID: 21300000, guid: 83ded5241a4e9a24091a45dd0be9d2e6, type: 3}
   jumpTwoIcon: {fileID: 21300000, guid: d0a37d143c637a044b6e3ac81cbac71e, type: 3}
   umbrellaDuration: 10
-  jumpTwoDuration: 15
+  jumpTwoDuration: 12.5
   skillUI: {fileID: 206493696}
   image: {fileID: 1669157751}
   fill: {fileID: 2022978167}
@@ -14996,7 +15009,7 @@ RectTransform:
   m_GameObject: {fileID: 909401572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 360120030}
@@ -15026,7 +15039,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 96c0a650ec0014049a5c0fcdf94ed321, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 63bca0d706c7c284c9ada828dc1a487e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -25744,10 +25757,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: "\u6309\u952E\u6309\u4F4F\u7684\u901F\u5EA6\u9700\u8981\u901A\u8FC7\u521A\u4F53\u7684\u91CD\u529B\u5927\u5C0F\u4E0E\u8DF3\u8DC3\u901F\u5EA6\u5171\u540C\u51B3\u5B9A\u8C03\u8282\u3002"
-  jumpForce: 30
+  jumpForce: 25
   disableTime: 0.08
-  jumpGravityScale: 8
-  fallGravityScale: 6
+  jumpGravityScale: 1.2
+  fallGravityScale: 0.9
 --- !u!114 &1268281797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25821,10 +25834,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e9785d465380d742a06c4964b53f388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slideSpeed: 5
+  slideSpeed: 1.5
   disableTime: 0.1
-  horizontalReduction: 1.44
-  verticalReduction: 1.44
+  horizontalReduction: 1.6
+  verticalReduction: 1.4
   wallJumpLerp: 5
 --- !u!114 &1268281800
 MonoBehaviour:
@@ -34956,7 +34969,7 @@ MonoBehaviour:
   Start_Position: {fileID: 1739174684}
   First_Card_Position: {fileID: 1521569233}
   card: {fileID: 1113163958412669982, guid: 8337e37d37bcb734d984c7a3d3a9ce87, type: 3}
-  interval: 3
+  interval: 3.5
 --- !u!1 &1845561513
 GameObject:
   m_ObjectHideFlags: 0
