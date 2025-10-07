@@ -56,6 +56,8 @@ public class Jump : MonoBehaviour
             return;
         }
 
+        GlobalData.effectManager.PlayEffect(GlobalData.effectManager.jump);
+
         //提供初速度
         player.rb.velocity = new Vector2(player.rb.velocity.x, 0);
         //物体原速度加上起跳速度

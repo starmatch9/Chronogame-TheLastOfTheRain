@@ -11,6 +11,8 @@ public class StopGame : MonoBehaviour
 
     public void StopAll()
     {
+        GlobalData.effectManager.PlayEffect(GlobalData.effectManager.UI);
+
         //会暂停物理系统、动画系统、粒子系统、协程
         Time.timeScale = 0f;
         GlobalData.mouseFollow.StopFollow();
@@ -21,6 +23,8 @@ public class StopGame : MonoBehaviour
 
     public void ResumeAll()
     {
+        GlobalData.effectManager.PlayEffect(GlobalData.effectManager.UI);
+
         Time.timeScale = 1f;
         GlobalData.mouseFollow.enabled = true;
 

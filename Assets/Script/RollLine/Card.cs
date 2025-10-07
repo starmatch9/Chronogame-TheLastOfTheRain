@@ -28,6 +28,9 @@ public class Card : MonoBehaviour
         {
             return;
         }
+
+        GlobalData.effectManager.PlayEffect(GlobalData.effectManager.UI);
+
         //告诉鼠标跟随，开始跟随这个建筑物预制件
         if (GlobalData.mouseFollow != null)
         {
@@ -37,6 +40,8 @@ public class Card : MonoBehaviour
 
     public void CardPlace(Vector3 pos)
     {
+        GlobalData.effectManager.PlayEffect(GlobalData.effectManager.UI);
+
         //在pos放置建筑
         if (buildingPrefab != null)
         {

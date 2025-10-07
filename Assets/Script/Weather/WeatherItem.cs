@@ -26,4 +26,7 @@ public class WeatherItem
 
     //持续时间波动范围
     public float durationRange;
+
+    //对应的背景音乐
+    public AudioClip voice;
 }

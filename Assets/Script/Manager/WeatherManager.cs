@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class WeatherManager : MonoBehaviour
 {
+    [Header("天气音效管理器")]
+    public VoiceManger voiceManger;
+
     [Header("填充对象")]
     public Image weatherFill;
 
@@ -73,7 +76,7 @@ public class WeatherManager : MonoBehaviour
             StopCoroutine(exist);
             exist = null;
         }
-        exist = StartCoroutine(Exist(selectedWeather.duration + Random.Range(-selectedWeather.durationRange, selectedWeather.durationRange)));
+        exist = StartCoroutine(Exist(selectedWeather.duration + Random.Range(-selectedWeather.durationRange, selectedWeather.durationRange), selectedWeather));
 
         //获取下一个天气索引
         currentWeatherIndex = GetWeightedRandom(index);
@@ -82,9 +85,11 @@ public class WeatherManager : MonoBehaviour
 
 
 
-    IEnumerator Exist(float duration)
+    IEnumerator Exist(float duration, WeatherItem selectedWeather)
     {
         //yield return new WaitForSeconds(duration);
+
+        voiceManger.PlayVoice(selectedWeather.voice);
 
         //填充从满到空
         float timer = 0f;
@@ -94,6 +99,8 @@ public class WeatherManager : MonoBehaviour
             weatherFill.fillAmount = Mathf.Lerp(1f, 0f, timer / duration);
             yield return null;
         }
+
+        voiceManger.StopVoice();
 
         //时间到，切换到下一个天气
         SetWeather(currentWeatherIndex);
