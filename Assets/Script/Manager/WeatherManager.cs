@@ -14,6 +14,13 @@ public class WeatherManager : MonoBehaviour
     [Header("天气列表")]
     public List<WeatherItem> weatherItems;
 
+    [Space]
+    [Header("每多少米各个权重增加多少")]
+    [Header("列表索引与天气索引一一对应")]
+    public int meter = 100;
+    public List<int> weightIncrease = new List<int>();
+
+
     //当前要设置的天气的索引
     int currentWeatherIndex = 0;
 
@@ -31,6 +38,20 @@ public class WeatherManager : MonoBehaviour
         SetWeather(currentWeatherIndex);
     }
 
+    //每隔多少高度生成一次技能
+    int number = 0;
+    void Update()
+    {
+        if (GlobalData.recard.highestY % meter == 0 && GlobalData.recard.highestY / meter > number)
+        {
+            //增加各个天气的权重
+            for (int i = 0; i < weatherItems.Count && i < weightIncrease.Count; i++)
+            {
+                weatherItems[i].weight += weightIncrease[i];
+            }
+            number++;
+        }
+    }
 
     //根据索引设置当前天气！
     public void SetWeather(int index)

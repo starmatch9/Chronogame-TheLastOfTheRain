@@ -7965,6 +7965,8 @@ MonoBehaviour:
     weight: 20
     duration: 10
     durationRange: 8
+  meter: 10
+  weightIncrease: 000000000a0000000a0000000a000000
 --- !u!1 &512643309
 GameObject:
   m_ObjectHideFlags: 0
