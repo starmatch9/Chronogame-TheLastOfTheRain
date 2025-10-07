@@ -37,6 +37,10 @@ public class MouseFollow : MonoBehaviour
             {
                 collider.isTrigger = true;
                 triggerCanPlaces.Add(collider.gameObject.GetComponent<TriggerCanPlace>());//也可以用AddComponent
+                if(collider.gameObject.GetComponent<Edge>() != null)
+                {
+                    Destroy(collider.gameObject.GetComponent<Edge>());
+                }
             }
             subObject.transform.localPosition = Vector3.zero;
 

@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public Collision coll;
 
+    public Animator animator;
+
     //启用各个能力脚本
     [Space]
     [Header("启用各个能力")]
@@ -86,6 +88,60 @@ public class Player : MonoBehaviour
             JumpAction();
         }
 
+        //动画
+
+        //待机
+        if (coll.onGround && x == 0 && !coll.onLeftWall && !coll.onRightWall)
+        {
+            animator.SetBool("Ani_Stand", true);
+        }
+        else
+        {
+            animator.SetBool("Ani_Stand", false);
+        }
+        //跑步
+        if (coll.onGround && x < 0 && !coll.onLeftWall && !coll.onRightWall)
+        {
+            animator.SetBool("Ani_LeftRun", true);
+        }
+        else
+        {
+            animator.SetBool("Ani_LeftRun", false);
+        }
+        if (coll.onGround && x > 0 && !coll.onLeftWall && !coll.onRightWall)
+        {
+            animator.SetBool("Ani_RightRun", true);
+        }
+        else
+        {
+            animator.SetBool("Ani_RightRun", false);
+        }
+        //跳跃
+        if (!coll.onGround && !coll.onLeftWall && !coll.onRightWall)
+        {
+            animator.SetBool("Ani_Jump", true);
+        }
+        else
+        {
+            animator.SetBool("Ani_Jump", false);
+        }
+        //贴墙
+        if (coll.onRightWall)
+        {
+            animator.SetBool("Ani_LeftWall", true);
+        }
+        else
+        {
+            animator.SetBool("Ani_LeftWall", false);
+        }
+        if (coll.onLeftWall)
+        {
+            animator.SetBool("Ani_RightWall", true);
+        }
+        else
+        {
+            animator.SetBool("Ani_RightWall", false);
+        }
 
     }
 
